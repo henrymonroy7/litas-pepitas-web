@@ -6,6 +6,7 @@ import {
   FormControlLabel,
   FormControl,
   FormGroup,
+  Box,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
   },
 });
-const CheckboxList = ({ name, optionsList }) => {
+const CheckboxList = ({ name, itemList }) => {
   const classes = useStyles();
 
   const handleCategoryChange = (event) => {
@@ -27,19 +28,18 @@ const CheckboxList = ({ name, optionsList }) => {
   return (
     <React.Fragment>
       <Grid item xs={12}>
-        <Typography gutterBottom>{name}</Typography>
+        <Typography gutterBottom>
+          <Box fontWeight="fontWeightBold">{name}</Box>
+        </Typography>
         <FormControl component="fieldset">
           <FormGroup className={classes.checkboxGroup}>
-            {optionsList.map((option) => (
+            {itemList.map((item) => (
               <FormControlLabel
-                key={option.id}
+                key={item.id}
                 control={
-                  <Checkbox
-                    onChange={handleCategoryChange}
-                    name={option.name}
-                  />
+                  <Checkbox onChange={handleCategoryChange} name={item.name} />
                 }
-                label={option.name}
+                label={item.name}
               />
             ))}
           </FormGroup>
