@@ -2,34 +2,14 @@ import * as React from "react";
 import { Grid, Typography } from "@mui/material";
 import FilterContainer from "../FilterContainer/FilterContainer";
 import ItemList from "./ItemList";
-const PRODUCTS = [
-  {
-    id: 1,
-    name: "product name",
-  },
-  {
-    id: 2,
-    name: "product name",
-  },
-  {
-    id: 3,
-    name: "product name",
-  },
-  {
-    id: 4,
-    name: "product name",
-  },
-  {
-    id: 5,
-    name: "product name",
-  },
-];
+import { PRODUCTS } from "../../services/data";
+
 const ItemListContainer = () => {
-  //   const [products, setProducts] = React.useState([]);
+  const products = PRODUCTS;
 
   return (
     <Grid
-      border={5}
+      border={1}
       borderColor={"red"}
       container
       spacing={1}
@@ -41,15 +21,15 @@ const ItemListContainer = () => {
         padding={1}
         item
         xs={1}
-        sm={3}
+        sm={2}
         md={2}
       >
         <FilterContainer />
       </Grid>
 
-      <Grid border={10} borderColor={"green"} item xs={3} sm={5} md={10}>
+      <Grid item xs={3} sm={6} md={10} border={3} borderColor={"green"}>
         <Typography>Item list container</Typography>
-        <ItemList products={PRODUCTS} />
+        <ItemList products={products} />
       </Grid>
     </Grid>
   );

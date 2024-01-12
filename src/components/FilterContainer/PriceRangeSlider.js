@@ -1,8 +1,10 @@
 import React from "react";
-import { Typography, Slider, Grid } from "@mui/material";
+import { Typography, Slider, Grid, Box } from "@mui/material";
 
-const formatPrice = (value) => {
-  return `$${value.toLocaleString("es-CO")}`;
+const formatPrice = (value, isValueLabelDisplay) => {
+  return isValueLabelDisplay
+    ? `$${value.toLocaleString("es-CO")}`
+    : `$${value / 1000}`;
 };
 
 const PriceRangeSlider = ({ min, max, step }) => {
@@ -34,9 +36,9 @@ const PriceRangeSlider = ({ min, max, step }) => {
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
+      <Grid item xs={12} paddingRight={1}>
         <Typography id="price-slider" gutterBottom>
-          Precio
+          <Box fontWeight="fontWeightBold">Precio</Box>
         </Typography>
         <Slider
           size="small"
@@ -47,7 +49,9 @@ const PriceRangeSlider = ({ min, max, step }) => {
           value={priceValue}
           onChange={handlePriceChange}
           valueLabelDisplay="auto"
-          valueLabelFormat={(value) => <div>{`${formatPrice(value)}`}</div>}
+          valueLabelFormat={(value) => (
+            <div>{`${formatPrice(value, true)}`}</div>
+          )}
           aria-labelledby="price-slider"
         />
       </Grid>

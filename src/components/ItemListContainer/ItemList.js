@@ -1,15 +1,24 @@
 import * as React from "react";
 import Item from "./Item";
-import { Grid, Paper } from "@mui/material";
+import { Grid } from "@mui/material";
 
 const ItemList = ({ products }) => {
   return (
     <React.Fragment>
-      <Paper>
-        {products.map((prod) => (
-          <Item key={prod.id} />
-        ))}
-      </Paper>
+      <Grid
+        container
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        columnSpacing={1}
+        border={1}
+      >
+        {products.map((prod) => {
+          return (
+            <Grid item xs={4} sm={4} md={4} border={1}>
+              <Item key={prod.id} />;
+            </Grid>
+          );
+        })}
+      </Grid>
     </React.Fragment>
   );
 };

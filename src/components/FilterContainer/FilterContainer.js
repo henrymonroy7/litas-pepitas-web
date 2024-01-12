@@ -18,7 +18,7 @@ const FilterContainer = () => {
       <Typography variant="h6" gutterBottom>
         Filters
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container rowSpacing={2}>
         <PriceRangeSlider
           min={priceRangeValues.min}
           max={priceRangeValues.max}
