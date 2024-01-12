@@ -1,3 +1,38 @@
+export const SORTING_OPTIONS = [
+  {
+    id: 1,
+    name: "Precio más bajo",
+  },
+  {
+    id: 2,
+    name: "Precio más alto ",
+  },
+  {
+    id: 3,
+    name: "Alfabéticamente A-Z",
+  },
+  {
+    id: 4,
+    name: "Alfabéticamente Z-A",
+  },
+  {
+    id: 5,
+    name: "Más recientes",
+  },
+  {
+    id: 6,
+    name: "Más antiguo",
+  },
+  {
+    id: 7,
+    name: "Más vendido",
+  },
+  {
+    id: 8,
+    name: "Mejor valorado",
+  },
+];
+
 export const CATEGORIES = [
   {
     id: 1,

@@ -20,7 +20,6 @@ function App() {
             <Route path="*" element={<h4>PÁGINA NO ENCONTRADA</h4>} />
           </Routes>
         </Container>
-
         <ScrollTop>
           <Fab size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
