@@ -3,33 +3,49 @@ import {
   Card,
   CardContent,
   CardMedia,
-  CardActions,
-  Button,
+  // CardActions,
+  // Button,
+  // IconButton,
+  // Grid,
 } from "@mui/material";
 import * as React from "react";
+// import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const Item = () => {
+const Item = ({ product }) => {
   return (
     <React.Fragment>
       <Card square={false}>
         <CardMedia
           component={"img"}
           alt="image-name"
-          image="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D"
+          image={product.images !== null ? product.images[0] : ""}
+          onClick={() => console.log("On click in card")}
         ></CardMedia>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
+          <Typography
+            variant="inherit"
+            color={"text.secondary"}
+            sx={{
+              fontSize: "1.0rem",
+            }}
+          >
+            {product.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography
+            variant="inherit"
+            sx={{
+              fontSize: "1.2rem",
+              fontWeight: "fontWeightBold",
+            }}
+          >
+            ${product.price.toLocaleString("es-CO")} COP
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Add to cart</Button>
-        </CardActions>
+        {/* <CardActions sx={{ justifyContent: "end" }}>
+          <IconButton size="large" color="primary">
+            <AddShoppingCartIcon fontSize="inherit" />
+          </IconButton>
+        </CardActions> */}
       </Card>
     </React.Fragment>
   );

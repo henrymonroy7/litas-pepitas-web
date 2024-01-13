@@ -9,12 +9,12 @@ const ItemList = ({ products }) => {
         container
         columns={{ xs: 4, sm: 8, md: 12 }}
         columnSpacing={1}
-        // border={1}
+        rowSpacing={1}
       >
         {products.map((prod) => {
           return (
-            <Grid item xs={4} sm={4} md={4}>
-              <Item key={prod.id} />;
+            <Grid key={prod.id} item xs={4} sm={4} md={4}>
+              <Item product={prod} />
             </Grid>
           );
         })}

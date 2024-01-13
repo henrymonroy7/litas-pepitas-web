@@ -6,7 +6,6 @@ import {
   FormControlLabel,
   FormControl,
   FormGroup,
-  Box,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
@@ -27,9 +26,9 @@ const CheckboxList = ({ name, itemList }) => {
 
   return (
     <React.Fragment>
-      <Grid item xs={12}>
-        <Typography gutterBottom>
-          <Box fontWeight="fontWeightBold">{name}</Box>
+      <Grid item xs={12} p={1} marginTop={1}>
+        <Typography variant="subtitle1" fontWeight="fontWeightBold">
+          {name}
         </Typography>
         <FormControl component="fieldset">
           <FormGroup className={classes.checkboxGroup}>

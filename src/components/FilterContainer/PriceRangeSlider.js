@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Slider, Grid, Box } from "@mui/material";
+import { Typography, Slider, Grid } from "@mui/material";
 
 const formatPrice = (value, isValueLabelDisplay) => {
   return isValueLabelDisplay
@@ -36,9 +36,13 @@ const PriceRangeSlider = ({ min, max, step }) => {
 
   return (
     <React.Fragment>
-      <Grid item xs={12} paddingRight={1}>
-        <Typography id="price-slider" gutterBottom>
-          <Box fontWeight="fontWeightBold">Precio</Box>
+      <Grid item xs={12} p={1} marginTop={1}>
+        <Typography
+          id="price-slider"
+          variant="subtitle1"
+          fontWeight="fontWeightBold"
+        >
+          Precio
         </Typography>
         <Slider
           size="small"

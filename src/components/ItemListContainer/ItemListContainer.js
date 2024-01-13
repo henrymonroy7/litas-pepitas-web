@@ -2,8 +2,9 @@ import * as React from "react";
 import { Grid, Typography } from "@mui/material";
 import FilterContainer from "../FilterContainer/FilterContainer";
 import ItemList from "./ItemList";
-import { PRODUCTS } from "../../services/data";
+
 import SortSelector from "../FilterContainer/SortSelector";
+import { PRODUCTS } from "../../services/products";
 
 const ItemListContainer = () => {
   const products = PRODUCTS;
@@ -18,7 +19,7 @@ const ItemListContainer = () => {
         <Grid item xs={3} sm={6} md={10}>
           <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
             <Grid item xs={4} sm={8} md={8}>
-              <Typography variant="h4">Item list container</Typography>
+              <Typography variant="h4"></Typography>
             </Grid>
             <Grid item xs={4} sm={8} md={4}>
               <SortSelector />
