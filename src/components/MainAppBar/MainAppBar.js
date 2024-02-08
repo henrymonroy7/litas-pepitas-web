@@ -38,7 +38,7 @@ const MainAppBar = (props) => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div">
-              Litas Pepitas store
+              Store
             </Typography>
           </Toolbar>
         </AppBar>

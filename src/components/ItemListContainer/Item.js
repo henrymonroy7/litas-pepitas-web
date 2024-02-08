@@ -4,7 +4,6 @@ import {
   CardContent,
   CardMedia,
   CardActions,
-  Link,
 } from "@mui/material";
 import * as React from "react";
 
@@ -16,6 +15,32 @@ import DynamicIconButton from "../DynamicIconButton/DynamicIconButton";
 
 const Item = ({ product }) => {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [stockInfo, setStockInfo] = React.useState({});
+
+  React.useEffect(() => {
+    const { stock } = product;
+    const newStockInfo = {};
+    const styles = {};
+
+    styles.marginRight = 1;
+    styles.fontWeight = "bold";
+    styles.textAlign = "right";
+    if (stock <= 0) {
+      newStockInfo.title = "¡Stock agotado!";
+      styles.color = "gray";
+      styles.textDecoration = "line-through";
+    } else if (stock > 0 && stock <= 10) {
+      const title = stock === 1 ? "Último en stock" : "Últimas unidades";
+      newStockInfo.title = `¡${title}!`;
+      styles.color = stock === 1 ? "red" : "red";
+    } else {
+      newStockInfo.title = "¡Stock disponible!";
+      styles.color = "green";
+    }
+    newStockInfo.styles = styles;
+
+    setStockInfo(newStockInfo);
+  }, [product]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -31,7 +56,7 @@ const Item = ({ product }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{
-          transform: isHovered ? "scale(1.02)" : "scale(1)",
+          transform: isHovered ? "scale(1.01)" : "scale(1)",
           transition: "transform 0.3s ease-in-out",
           cursor: "pointer",
         }}
@@ -41,23 +66,24 @@ const Item = ({ product }) => {
           alt="image-name"
           image={product.images !== null ? product.images[0] : ""}
         ></CardMedia>
+
+        <Typography
+          sx={{
+            ...stockInfo.styles,
+          }}
+        >
+          {stockInfo.title}
+        </Typography>
+
         <CardContent>
-          <Link
-            component="button"
-            variant="overline"
-            color={"inherit"}
-            sx={{ fontSize: "1.0rem" }}
-            onClick={() => {
-              console.info("I'm a button.");
-            }}
-          >
+          <Typography variant="overline" color={"inherit"}>
             {product.name}
-          </Link>
+          </Typography>
 
           <Typography
             variant="inherit"
+            color={"primary"}
             sx={{
-              fontSize: "1.2rem",
               fontWeight: "fontWeightBold",
             }}
           >

@@ -29,7 +29,7 @@ export const PRODUCTS = [
     shortDescription: "",
     description: "",
     price: 20000,
-    stock: 0,
+    stock: 15,
     sku: "INV-CTA-715A808F",
     images: [
       "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D",
@@ -53,7 +53,7 @@ export const PRODUCTS = [
     shortDescription: "Cuentas de cerámica en vidrio rosado y ojo de tigre",
     description: "",
     price: 18000,
-    stock: 0,
+    stock: 7,
     sku: "INV-CTA-BBA3CFBC",
     images: [
       "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D",
@@ -103,7 +103,7 @@ export const PRODUCTS = [
     shortDescription: "",
     description: "",
     price: 20000,
-    stock: 0,
+    stock: 6,
     sku: "INV-CTA-4EC9CD0E",
     images: [
       "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D",
@@ -128,7 +128,7 @@ export const PRODUCTS = [
     description:
       "Este Shoker está hecho con chaquiras en tonos rojos, acompañado con un dije divertido que le añade un toque de personalidad. Ideal para complementar tus looks con un toque de color y diversión.",
     price: 20000,
-    stock: 0,
+    stock: 50,
     sku: "INV-CTA-BEFBBFB7",
     images: [
       "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D",
@@ -255,7 +255,7 @@ export const PRODUCTS = [
     description:
       "Un shoker vibrante y llamativo, creado con chaquiras de colores brillantes que forman un arcoíris en tu cuello. Además, cuenta con un hermoso dije que añade un toque de encanto y estilo a esta pieza única.",
     price: 20000,
-    stock: 0,
+    stock: 11,
     sku: "INV-CTA-9F1FEBCB",
     images: [
       "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D",
@@ -306,7 +306,7 @@ export const PRODUCTS = [
     description:
       "Esta pulsera de anillo es una obra de arte en sí misma. Está elaborada con una delicada cadena y pequeños dijes en oro goldfield, que aportan un toque de elegancia y brillo. Sin embargo, lo que realmente hace que esta pieza sea única e irrepetible es su espectacular dije en forma de 'La mano de Hamsa', tejido con cuentas Miyuki. Este símbolo milenario representa protección y buena suerte, agregando un significado especial a la pulsera. Es el accesorio perfecto para aquellos que buscan combinar estilo, elegancia y un toque de misticismo.",
     price: 69000,
-    stock: 0,
+    stock: 1,
     sku: "INV-CTA-576F9315",
     images: [
       "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlzdXRlcmlhfGVufDB8MHwwfHx8Mg%3D%3D",
