@@ -1,10 +1,11 @@
 import React from "react";
-import { Grid, Link, Typography } from "@mui/material";
+import { Button, Grid, Link, Typography } from "@mui/material";
 import PriceRangeSlider from "./PriceRangeSlider";
 import CheckboxList from "./CheckboxList";
 import { CATEGORIES, COLORS, SUPPLIES } from "../../services/data";
 
 const FilterContainer = () => {
+  const title = "Filtrar";
   const categories = CATEGORIES;
   const supplies = SUPPLIES;
   const colors = COLORS;
@@ -23,7 +24,7 @@ const FilterContainer = () => {
         >
           <Grid item xs={12} md={5} alignSelf={"start"}>
             <Typography variant="h5" gutterBottom>
-              Filters
+              {title}
             </Typography>
           </Grid>
           <Grid
@@ -45,7 +46,7 @@ const FilterContainer = () => {
             </Link>
           </Grid>
         </Grid>
-        <Grid container>
+        <Grid>
           <PriceRangeSlider
             min={priceRangeValues.min}
             max={priceRangeValues.max}
@@ -55,6 +56,7 @@ const FilterContainer = () => {
           <CheckboxList name={"Materiales"} itemList={supplies} />
           <CheckboxList name={"Colores"} itemList={colors} />
         </Grid>
+        <Button variant="contained">Aplicar</Button>
       </Grid>
     </React.Fragment>
   );
