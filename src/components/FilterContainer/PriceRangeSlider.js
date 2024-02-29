@@ -1,5 +1,12 @@
 import React from "react";
-import { Typography, Slider, Grid } from "@mui/material";
+import {
+  Typography,
+  Slider,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const formatPrice = (value, isValueLabelDisplay) => {
   return isValueLabelDisplay
@@ -36,29 +43,37 @@ const PriceRangeSlider = ({ min, max, step }) => {
 
   return (
     <React.Fragment>
-      <Grid item xs={12} p={1} marginTop={1}>
-        <Typography
-          id="price-slider"
-          variant="subtitle1"
-          fontWeight="fontWeightBold"
+      <Accordion elevation={0}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
         >
-          Precio
-        </Typography>
-        <Slider
-          size="small"
-          step={step}
-          min={min}
-          max={max}
-          marks={marks}
-          value={priceValue}
-          onChange={handlePriceChange}
-          valueLabelDisplay="auto"
-          valueLabelFormat={(value) => (
-            <div>{`${formatPrice(value, true)}`}</div>
-          )}
-          aria-labelledby="price-slider"
-        />
-      </Grid>
+          <Typography
+            id="price-slider"
+            variant="subtitle1"
+            fontWeight="fontWeightBold"
+          >
+            Precio
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Slider
+            size="small"
+            step={step}
+            min={min}
+            max={max}
+            marks={marks}
+            value={priceValue}
+            onChange={handlePriceChange}
+            valueLabelDisplay="auto"
+            valueLabelFormat={(value) => (
+              <div>{`${formatPrice(value, true)}`}</div>
+            )}
+            aria-labelledby="price-slider"
+          />
+        </AccordionDetails>
+      </Accordion>
     </React.Fragment>
   );
 };

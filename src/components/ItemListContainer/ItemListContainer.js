@@ -1,33 +1,64 @@
 import * as React from "react";
 import { Grid, Typography } from "@mui/material";
-import FilterContainer from "../FilterContainer/FilterContainer";
 import ItemList from "./ItemList";
-
 import SortSelector from "../FilterContainer/SortSelector";
 import { PRODUCTS } from "../../services/products";
+import DrawerContainer from "../FilterContainer/DrawerContainer";
 
 const ItemListContainer = () => {
   const products = PRODUCTS;
 
   return (
     <React.Fragment>
-      <Grid container spacing={1} columns={{ xs: 4, sm: 8, md: 12 }}>
-        <Grid padding={1} item xs={1} sm={2} md={2}>
-          <FilterContainer />
+      <Grid
+        container
+        spacing={1}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        justifyContent={"space-between"}
+        // sx={{ border: 1, borderColor: "blue" }}
+      >
+        <Grid
+          item
+          xs={4}
+          sm={8}
+          md={8}
+          alignSelf={"center"}
+          // sx={{ border: 1 }}
+        >
+          <Typography variant="h6">hola</Typography>
         </Grid>
-
-        <Grid item xs={3} sm={6} md={10}>
-          <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
-            <Grid item xs={4} sm={8} md={8}>
-              <Typography variant="h4"></Typography>
-            </Grid>
-            <Grid item xs={4} sm={8} md={4}>
-              <SortSelector />
-            </Grid>
-          </Grid>
-          <Grid item xs={4} sm={8} md={12} padding={1}>
-            <ItemList products={products} />
-          </Grid>
+        <Grid
+          item
+          xs={4}
+          sm={4}
+          md={3}
+          alignSelf={"center"}
+          // textAlign={"justify"}
+          p={1}
+          // sx={{ border: 2, borderColor: "red" }}
+        >
+          <SortSelector />
+        </Grid>
+        <Grid
+          item
+          xs={4}
+          sm={4}
+          md={1}
+          alignSelf={"center"}
+          p={1}
+          // sx={{ border: 2, borderColor: "green" }}
+        >
+          <DrawerContainer />
+        </Grid>
+        <Grid
+          item
+          xs={4}
+          sm={8}
+          md={12}
+          p={1}
+          // sx={{ border: 1, borderColor: "purple" }}
+        >
+          <ItemList products={products} />
         </Grid>
       </Grid>
     </React.Fragment>

@@ -6,6 +6,7 @@ import { CssBaseline, Container, Fab } from "@mui/material";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ScrollTop from "./components/MainAppBar/ScrollTop";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import DrawerContainer from "./components/FilterContainer/DrawerContainer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Container maxWidth="xl" style={{ marginTop: "2%" }}>
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
+            <Route path="/drawer" element={<DrawerContainer />} />
             <Route path="/category/:categoryId" element={<p>categoryId</p>} />
             <Route path="*" element={<h4>PÁGINA NO ENCONTRADA</h4>} />
           </Routes>

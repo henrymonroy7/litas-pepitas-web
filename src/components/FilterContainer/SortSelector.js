@@ -14,20 +14,14 @@ const SortSelector = () => {
   return (
     <React.Fragment>
       <FormControl
-        variant="standard"
+        variant="outlined"
+        size="small"
         sx={{
-          m: 0.5,
           minWidth: "100%",
         }}
       >
         <InputLabel id="sort-select-label-id">Ordenar</InputLabel>
-        <Select
-          labelId="sort-select-label-id"
-          id="sort-select-standar"
-          value={selected}
-          onChange={handleChange}
-          label="Ordenar"
-        >
+        <Select value={selected} onChange={handleChange} label="Ordenar">
           <MenuItem value="">
             <em>Ninguno</em>
           </MenuItem>
